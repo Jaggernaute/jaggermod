@@ -1,0 +1,16 @@
+[
+  {
+    "modid": "jaggernaute",
+    "name": "Jaggermod",
+    "description": "a randomness mayhem",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": ["Jaggernaute"],
+    "credits": "Code textures and all: Jaggernaute",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
