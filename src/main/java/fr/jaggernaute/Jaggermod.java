@@ -1,19 +1,16 @@
 package fr.jaggernaute;
 
+import fr.jaggernaute.events.RegisteringEvent;
 import fr.jaggernaute.proxy.CommonProxy;
 import fr.jaggernaute.utils.References;
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraftforge.event.RegistryEvent;
+
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
-import java.lang.ref.Reference;
 
 @Mod(
         modid = References.MOD_ID,
@@ -33,6 +30,10 @@ public class Jaggermod {
      */
     @SidedProxy(clientSide = References.ClientProxy, serverSide = References.ServerProxy)
     public static CommonProxy proxy;
+
+    public Jaggermod() {
+        MinecraftForge.EVENT_BUS.register(new RegisteringEvent());
+    }
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent e){
